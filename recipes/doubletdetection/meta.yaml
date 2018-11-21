@@ -24,35 +24,22 @@ requirements:
     - matplotlib >=3.0.0
     - numpy >=1.13
     - pandas >=0.23
-    - scipy >=1.10
-    - sklearn >=0.20
+    - scipy >=1.1.0
+    - scikit-learn >=0.20
     - pytables >=3.4
+    - phenograph =1.5.2_15a4f8ac
 
 test:
   imports:
-    - scanpy
-    - scanpy.api
-    - scanpy.datasets
-    - scanpy.neighbors
-    - scanpy.neighbors.umap
-    - scanpy.plotting
-    - scanpy.plotting.tools
-    - scanpy.preprocessing
-    - scanpy.preprocessing._deprecated
-    - scanpy.queries
-    - scanpy.rtools
-    - scanpy.sim_models
-    - scanpy.tools
+    - doubletdetection
 
 about:
-  home: http://github.com/theislab/scanpy
-  license: BSD
-  license_family: BSD
-  license_file:
-  summary: Single-Cell Analysis in Python.
-  doc_url:
-  dev_url:
+  home: http://github.com/theislab/scanp://github.com/JonathanShor/DoubletDetection
+  license: MIT
+  license_family: MIT
+  license_file: LICENSE.txt
+  summary: Doublet detection in single-cell RNA-seq data.
 
 extra:
   recipe-maintainers:
-    - your-github-id-here
+    - grst
