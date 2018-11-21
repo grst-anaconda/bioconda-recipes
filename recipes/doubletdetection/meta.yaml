@@ -1,0 +1,58 @@
+{% set name = "doubletdetection" %}
+{% set version = "2.4" %}
+{% set sha256 = "34ac61e0eec10cd872f59e106cf09c82ec8acdf43268a20421e1626ac92aac97" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+source:
+  url: https://github.com/JonathanShor/DoubletDetection/archive/v{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+build:
+  number: 0
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv "
+
+requirements:
+  host:
+    - pip
+    - python
+
+  run:
+    - multicore-tsne =0.1_d4ff4aab
+    - matplotlib >=3.0.0
+    - numpy >=1.13
+    - pandas >=0.23
+    - scipy >=1.10
+    - sklearn >=0.20
+    - pytables >=3.4
+
+test:
+  imports:
+    - scanpy
+    - scanpy.api
+    - scanpy.datasets
+    - scanpy.neighbors
+    - scanpy.neighbors.umap
+    - scanpy.plotting
+    - scanpy.plotting.tools
+    - scanpy.preprocessing
+    - scanpy.preprocessing._deprecated
+    - scanpy.queries
+    - scanpy.rtools
+    - scanpy.sim_models
+    - scanpy.tools
+
+about:
+  home: http://github.com/theislab/scanpy
+  license: BSD
+  license_family: BSD
+  license_file:
+  summary: Single-Cell Analysis in Python.
+  doc_url:
+  dev_url:
+
+extra:
+  recipe-maintainers:
+    - your-github-id-here
