@@ -1,0 +1,41 @@
+{% set name = "PhenoGraph" %}
+{% set version = "1.5.2_15a4f8ac" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+source:
+  url: https://github.com/JonathanShor/PhenoGraph/archive/15a4f8ac5d3b21cf0faf3ccfff6adee84cf0f471.zip
+  sha256: 88fb8a6d7011c63736b29c6fec0a3f5734485a921046f38ecdb7d5b9c4eef8b4
+
+build:
+  number: 0
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv "
+
+requirements:
+  host:
+    - pip
+    - python
+
+  run:
+    - numpy >=1.9.2
+    - scipy >=0.16.0
+    - scikit-learn >=0.17
+    - psutil >4
+
+test:
+  imports:
+    - phenograph
+    - phenograph.louvain
+
+about:
+  home: https://github.com/JonathanShor/PhenoGraph
+  license: MIT
+  license_family: MIT
+  license_file: LICENSE
+  summary: Subpopulation detection in high-dimensional single-cell data
+
+extra:
+  recipe-maintainers:
+    - grst
