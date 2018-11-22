@@ -1,5 +1,5 @@
 {% set name = "scanpy" %}
-{% set version = "1.3.3_b0df581" %}
+{% set version = "1.3.3_cb8aca9" %}
 
 package:
   name: {{ name|lower }}
@@ -8,8 +8,8 @@ build:
   number: 0
   skip: True # [not py36]
 source:
-  url: https://github.com/grst/scanpy/archive/b0df581ac433f03317c4e55d06cd269d1fc43ea7.tar.gz
-  sha256: 20bbc33be974e72c7557a06ba49e38d15d220e488fa7e44285156834310bcf61
+  url: https://github.com/grst/scanpy/archive/cb8aca90045549a991c1d23b58c64e8ebb296350.tar.gz
+  sha256: 764d2e5c473ca2d1f1e628c8730f27309ee3a5b12eb822c29079b2c88943831f
 
 requirements:
   host:
